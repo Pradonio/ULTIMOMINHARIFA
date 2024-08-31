@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        #questionMark {
+            font-size: 150px;
+            color: #333;
+            margin-top: 50px;
+        }
+        #drawnNumber {
+            font-size: 100px;
+            color: #333;
+            margin-top: 20px;
+        }
+        #reservedBy {
+            font-size: 20px;
+            color: #555;
+            margin-top: 10px;
+        }
+        #drawNumberBtn {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin-top: 30px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #drawNumberBtn:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+        #shareButton, #saveButton {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin-top: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none; /* Inicialmente escondido */
+        }
+        #shareButton:hover, #saveButton:hover {
+            background-color: #218838;
+        }
+    </style>
+    <!-- Inclua a biblioteca html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+</head>
+<body>
+    <div id="questionMark">?</div>
+    <div id="drawnNumber"></div>
+    <div id="reservedBy"></div>
+    <button id="drawNumberBtn">Sortear Número</button>
+    <button id="shareButton">Compartilhar no WhatsApp</button>
+    <button id="saveButton">Salvar Imagem</button>
+
+    <script type="module" src="sorteio.js"></script>
+</body>
+</html>
