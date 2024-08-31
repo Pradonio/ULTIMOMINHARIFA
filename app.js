@@ -40,7 +40,11 @@ function register() {
             });
         })
         .catch((error) => {
-            alert('Erro ao cadastrar: ' + error.message);
+            if (error.code === 'auth/email-already-in-use') {
+                alert('Este e-mail já está em uso. Tente com um e-mail diferente.');
+            } else {
+                alert('Erro ao cadastrar: ' + error.message);
+            }
         });
 }
 
@@ -56,6 +60,10 @@ function login() {
             window.location.href = 'main.html';
         })
         .catch((error) => {
-            alert('Erro ao fazer login: ' + error.message);
+            if (error.code === 'auth/invalid-credential') {
+                alert('Credenciais inválidas. Verifique seu e-mail e senha.');
+            } else {
+                alert('Erro ao fazer login: ' + error.message);
+            }
         });
 }
